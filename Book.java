@@ -22,7 +22,16 @@ public class Book implements Library {
    public void addBook(Book b,int id,String pass,Admin a){
 
     if(this.a==null){
-        
+        this.a=a;
+        System.out.println("Welcome Admin");
+    }
+    else{
+        try {
+            throw new NoAdminException();
+            
+        } catch (NoAdminException e) {
+           System.out.println("No Admin Yet!");
+        }
 
     }
 
@@ -44,6 +53,21 @@ public class Book implements Library {
     }
 
     public void addMember(Member m,int id){
+
+        if (m.memberId!=id) {
+            try {
+                throw new NotAMemberException();
+            } catch (NotAMemberException e) {
+                System.out.println("You're Not a Member");
+            }
+            
+        } else {
+            System.out.println("Welcome Member: "+this.m.name);
+            this.m.mem.add(m);
+            
+        }
+
+
 
     }
 
