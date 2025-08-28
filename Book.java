@@ -73,9 +73,34 @@ public class Book implements Library {
 
     public  void issueBook(int bookId,int memberId){
 
+       for (Book book : books) {
+        if(book.bookId==bookId){
+            System.out.println("Book issued Successfully");
+            book.quantity--;
+            return;
+        }
+        else{
+            System.out.println("Book Not Available");
+            return;
+        }
+        
+       }
+       System.out.println("Book Id not found!");
+
     }
 
     public void returnBook(int bookId,int memberId){
+
+        for(Book b:books){
+            if (b.bookId==bookId&&m.memberId==memberId) {
+                System.out.println("Book returned Successfully");
+                b.quantity++;
+                return;
+            } else {
+                System.out.println("Book Id Not Found");
+                
+            }
+        }
 
     }
 
