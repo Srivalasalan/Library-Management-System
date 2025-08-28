@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+
 public class Member {
+    ArrayList<Member> mem=new ArrayList<>();
     int memberId;
     String name;
     String contactInfo;
