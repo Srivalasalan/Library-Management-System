@@ -136,7 +136,7 @@ public class Book implements Library {
             System.out.println("No Members Available");
         }
         for(Member members:m.mem){
-            System.out.println("Member Id: "+members.id+"\nName: "+members.name+"\nContact Info: "+members.contactInfo);
+            System.out.println("Member Id: "+members.memberId+"\nName: "+members.name+"\nContact Info: "+members.contactInfo);
 
         }
 
