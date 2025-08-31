@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Book implements Library {
 
     ArrayList<Book> books= new ArrayList<>();
+  
     int bookId;
     String title;
     String author;
@@ -64,6 +65,7 @@ public class Book implements Library {
         } else {
             System.out.println("Welcome Member: "+this.m.name);
             this.m.mem.add(m);
+           
             
         }
 
@@ -106,13 +108,37 @@ public class Book implements Library {
 
     public void searchBook(String title){
 
+        for(Book b: books){
+            if(title.equalsIgnoreCase(b.title)){
+                System.out.println("Book Found ");
+                System.out.println("Book Name: "+b.title);
+                System.out.println("Quantity: "+b.quantity);
+            }
+            else{
+                System.out.println("Book not found");
+            }
+        }
+
     }
 
     public void displayBooks(){
 
+        if(books.isEmpty())
+            System.out.println("No Books Available");
+        for(Book b: books){
+            System.out.println("Book Id: "+b.bookId +"\nTitle: "+b.title+ "\nAuthor: "+b.author+"\nQuantity: "+b.quantity);
+        }
+
     }
 
     public void displayMembers(){
+        if (m.mem.isEmpty()) {
+            System.out.println("No Members Available");
+        }
+        for(Member members:m.mem){
+            System.out.println("Member Id: "+members.id+"\nName: "+members.name+"\nContact Info: "+members.contactInfo);
+
+        }
 
     }
 
