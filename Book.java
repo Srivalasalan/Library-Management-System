@@ -25,6 +25,7 @@ public class Book implements Library {
     if(this.a==null){
         this.a=a;
         System.out.println("Welcome Admin");
+        return;
     }
     else{
         try {
@@ -33,14 +34,14 @@ public class Book implements Library {
         } catch (NoAdminException e) {
            System.out.println("No Admin Yet!");
         }
-
+       
     }
 
     if (id==a.id && pass.equals(a.pass)) {
 
         books.add(b);
         System.out.println("Book Added Successfully");
- 
+        return;
     }
     else{
         try{
@@ -49,6 +50,7 @@ public class Book implements Library {
         catch(InvalidCredentialException e){
             System.out.println("Wrong Credentials");
         }
+        return;
     }
 
     }
@@ -61,12 +63,13 @@ public class Book implements Library {
             } catch (NotAMemberException e) {
                 System.out.println("You're Not a Member");
             }
+            return;
             
         } else {
             System.out.println("Welcome Member: "+this.m.name);
             this.m.mem.add(m);
            
-            
+           return; 
         }
 
 
@@ -102,6 +105,7 @@ public class Book implements Library {
                 System.out.println("Book Id Not Found");
                 
             }
+            return;
         }
 
     }
@@ -113,9 +117,11 @@ public class Book implements Library {
                 System.out.println("Book Found ");
                 System.out.println("Book Name: "+b.title);
                 System.out.println("Quantity: "+b.quantity);
+                
             }
             else{
                 System.out.println("Book not found");
+                return;
             }
         }
 
