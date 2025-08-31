@@ -20,7 +20,7 @@ public class Book implements Library {
         this.a=a;
     }
 
-   public void addBook(Admin a){
+   public void addBook(Book b,int,Admin a){
 
     if(this.a==null){
         this.a=a;
