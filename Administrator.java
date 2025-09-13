@@ -1,4 +1,3 @@
-package pro1;
 
 public class Administrator {
 	
