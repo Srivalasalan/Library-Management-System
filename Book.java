@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 
 public class Book {
 
@@ -5,6 +6,8 @@ public class Book {
 	String title;
 	String author;
 	boolean issued = false;
+	LocalDate issuedDate;
+	LocalDate dueDate;
 
 	public Book(int bookId, String title, String author) {
 		this.bookId = bookId;
@@ -17,6 +20,10 @@ public class Book {
 		if(!issued) {
 			issued=true;
 			System.out.println("Book issued: "+ title);
+			 issuedDate=LocalDate.now();
+			System.out.print("Book issued Date is: "+issuedDate);
+			 dueDate =issuedDate.plusDays(14);
+			System.out.print("\n Book Due Date is: "+dueDate);
 		}
 		else {
 			System.out.println("Book not issued");
