@@ -149,14 +149,71 @@ public class MainDriver {
 					
 				}break;
 				case 3:{
+					librarian.issueBook(b1, member);
 					
 					
+				}break;
+				
+				case 4:{
+					librarian.returnBook(b1, member);
+				}break;
+				default:{
+					System.out.print("Enter Valid Choice: ");
 				}break;
 				}
 				
 
 			}
 				break;
+				
+			case 5:{
+				System.out.println("\n1.Add Member\n2.Remove Member\n3.View Reports");
+				System.out.print("Enter Your Choice: ");
+				int choice=scan.nextInt();
+				switch(choice) {
+				case 1:{
+					System.out.print("\nEnter the Member ID: ");
+					int memId = scan.nextInt();
+					System.out.print("\nEnter the Member Name: ");
+					String memName = scan.next();
+					System.out.print("\nEnter the Contact Number: ");
+					long cno=scan.nextLong();
+					Member newMember = new Member(memId, memName, cno);
+					admin.addMember(library, newMember);
+					
+				}break;
+				
+				case 2:{
+					System.out.print("\nEnter the Member ID: ");
+					int memId = scan.nextInt();
+					System.out.print("\nEnter the Member Name: ");
+					String memName = scan.next();
+					System.out.print("\nEnter the Contact Number: ");
+					long cno=scan.nextLong();
+					Member newMember = new Member(memId, memName, cno);
+					admin.removeMember(library, newMember);
+				}break;
+				
+				case 3:{
+					admin.viewReports(library);
+				}break;
+				
+				default:{
+					System.out.print("Enter Valid Choice: ");
+				}break;
+				}
+				
+			}break;
+			
+			case 6:{
+				System.out.println("\n1.Create\n2.Update\n3.Delete");
+				int choice = scan.nextInt();
+				switch(choice) {
+				case 1:{
+					
+				}
+				}
+			}
 
 			}
 		}
