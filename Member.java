@@ -8,7 +8,7 @@ public class Member {
 	long contact;
 	LinkedList<Book> books = new LinkedList<Book>();
 
-	public Member(int memberId, String name, long contact, Book b) {
+	public Member(int memberId, String name, long contact) {
 
 		this.memberId = memberId;
 		this.name = name;
