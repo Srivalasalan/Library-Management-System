@@ -32,7 +32,7 @@ public class Librarian {
 	}
 
 	public void returnBook(Book book, Member mem) {
-		mem.reserveBook(book);
+		mem.returnBook(book);
 	}
 
 }
